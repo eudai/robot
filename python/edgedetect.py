@@ -10,7 +10,7 @@ def my_callback(channel):
     else:                  # if port 25 != 1  
         print ("Falling edge detected on 25")  
   
-# when a changing edge is detected on port 25, regardless of whatever   
+# when a changing edge is detected on port 4, regardless of whatever   
 # else is happening in the program, the function my_callback will be run  
 GPIO.add_event_detect(4, GPIO.BOTH, callback=my_callback)  
 
