@@ -5,10 +5,10 @@ GPIO.setmode(GPIO.BCM)     # set up BCM GPIO numbering
 GPIO.setup(4, GPIO.IN)    # set GPIO25 as input (button)  
   
 def my_callback(channel):  
-    if GPIO.input(4):     # if port 25 == 1  
-        print ("Rising edge detected on 25")  
+    if GPIO.input(4):     # if port 4 == 1  
+        print ("Rising edge detected on 4")  
     else:                  # if port 25 != 1  
-        print ("Falling edge detected on 25")  
+        print ("Falling edge detected on 4")  
   
 # when a changing edge is detected on port 4, regardless of whatever   
 # else is happening in the program, the function my_callback will be run  
