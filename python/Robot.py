@@ -75,7 +75,7 @@ def stop_moving():
     
 def test_sequence():
     seq = [forward,reverse,left_arch,right_arch,left_pivot,right_pivot]
-    for i in seq
+    for i in seq:
         seq[i]()
         time.sleep(3)
     stop_moving()
