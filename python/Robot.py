@@ -32,7 +32,6 @@ def reverse():
     GPIO.output(16, 1)
     GPIO.output(23, 1)
     GPIO.output(24, 0)
-    time.sleep(3)
 
 def right_arch():
     p.start(50)
@@ -40,7 +39,6 @@ def right_arch():
     GPIO.output(16, 0)
     GPIO.output(23, 0)
     GPIO.output(24, 1)
-    time.sleep(3)
     
 def left_arch():
     p1.start(75)
@@ -49,7 +47,6 @@ def left_arch():
     GPIO.output(16, 0)
     GPIO.output(23, 0)
     GPIO.output(24, 0)
-    time.sleep(3)
 
 def left_pivot():
     p1.start(75)
@@ -58,7 +55,6 @@ def left_pivot():
     GPIO.output(16, 0)
     GPIO.output(23, 1)
     GPIO.output(24, 0)
-    time.sleep(3)
 
 def right_pivot():
     p1.start(75)
@@ -67,24 +63,33 @@ def right_pivot():
     GPIO.output(16, 1)
     GPIO.output(23, 0)
     GPIO.output(24, 1)
-    time.sleep(3)
+
+def stop_moving():
+    p1.start(75)
+    p.start(50)
+    GPIO.output(15, 0)
+    GPIO.output(16, 0)
+    GPIO.output(23, 0)
+    GPIO.output(24, 0)
+
     
 def test_sequence():
     seq = [forward,reverse,left_arch,right_arch,left_pivot,right_pivot]
     for i in seq
         seq[i]()
         time.sleep(3)
+    stop_moving()
     print ("test complete.")
 
 def edge_detected(channel):  
     print(channel)
     if GPIO.input(14):     # if port 4 == 1  
         print ("Rising edge detected on 14")
-        stop_moving() 
+        stop_moving()
+        right_pivot()
     else:                  # if port 25 != 1  
         print ("Falling edge detected on 14")
-
-def start_moving():
+        start_moving()
 
   
 # when a changing edge is detected on port 4, regardless of whatever   
