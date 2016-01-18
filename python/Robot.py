@@ -96,4 +96,7 @@ def edge_detected(channel):
 # else is happening in the program, the function my_callback will be run  
 GPIO.add_event_detect(14, GPIO.BOTH, callback=edge_detected)  
 
+time.sleep(30)
+
 GPIO.cleanup()
+print('goodbye.')
