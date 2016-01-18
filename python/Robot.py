@@ -85,7 +85,7 @@ def edge_detected(channel):
     print(channel)
     if GPIO.input(14):     # if port 4 == 1  
         print ("Rising edge detected on 14")
-        stop_moving()
+        forward()
         right_pivot()
     else:                  # if port 25 != 1  
         print ("Falling edge detected on 14")
