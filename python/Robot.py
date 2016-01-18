@@ -16,8 +16,8 @@ p1 = GPIO.PWM(12, 50)
 GPIO.setmode(GPIO.BCM)     # set up BCM GPIO numbering  
 GPIO.setup(14, GPIO.IN)    # set GPIO25 as input (button)  
 
-p_amt = 50
-p1_amt = 75
+p_amt = 60      # left
+p1_amt = 80     # right
 
 
 
@@ -52,7 +52,7 @@ def left_arch():
     GPIO.output(23, 0)
     GPIO.output(24, 0)
 
-def left_pivot():
+def right_pivot():
     p1.start(p1_amt)
     p.start(p_amt)
     GPIO.output(15, 1)
@@ -60,7 +60,7 @@ def left_pivot():
     GPIO.output(23, 1)
     GPIO.output(24, 0)
 
-def right_pivot():
+def left_pivot():
     p1.start(p1_amt)
     p.start(p_amt)
     GPIO.output(15, 0)
