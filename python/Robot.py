@@ -21,7 +21,7 @@ p1_amt = 75
 
 
 
-def forward():
+def reverse():
 	p.start(p_amt)
 	p1.start(p1_amt)
 	GPIO.output(15, 1)
@@ -29,7 +29,7 @@ def forward():
 	GPIO.output(23, 0)
 	GPIO.output(24, 1)
 
-def reverse():
+def forward():
     p1.start(p1_amt)
     p.start(p_amt)
     GPIO.output(15, 0)
@@ -88,10 +88,10 @@ def test_sequence():
 def edge_detected(channel):
     if GPIO.input(channel): # if port 4 == 1  
         print ("Rising edge detected on 14")
-        right_pivot()
+        forward()
     else:                  # if port 25 != 1  
         print ("Falling edge detected on 14")
-        forward()
+        right_pivot()
 
   
 # when a changing edge is detected on port 4, regardless of whatever   
