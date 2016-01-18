@@ -81,15 +81,14 @@ def test_sequence():
     stop_moving()
     print ("test complete.")
 
-def edge_detected(channel):  
-    print(channel)
-    if GPIO.input(14):     # if port 4 == 1  
+def edge_detected(channel):
+    if GPIO.input(channel): # if port 4 == 1  
         print ("Rising edge detected on 14")
         forward()
         right_pivot()
     else:                  # if port 25 != 1  
         print ("Falling edge detected on 14")
-        start_moving()
+        forward()
 
   
 # when a changing edge is detected on port 4, regardless of whatever   
