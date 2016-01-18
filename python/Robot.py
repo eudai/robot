@@ -86,19 +86,25 @@ def test_sequence():
     print ("test complete.")
 
 def edge_detected(channel):
-    if GPIO.input(channel): # if port 4 == 1  
-        print ("Rising edge detected on 14")
+    var pin_active = GPIO.input(channel)
+    events.push(pin_active)
+    if pin_active: # if port 4 == 1  
+        # print ("Rising edge detected on 14")
         forward()
     else:                  # if port 25 != 1  
-        print ("Falling edge detected on 14")
+        # print ("Falling edge detected on 14")
         right_pivot()
 
   
 # when a changing edge is detected on port 4, regardless of whatever   
 # else is happening in the program, the function my_callback will be run  
-GPIO.add_event_detect(14, GPIO.BOTH, callback=edge_detected)  
+GPIO.add_event_detect(14, GPIO.BOTH, callback=edge_detected)
 
+events = []
+print('hello.')
 time.sleep(30)
 
 GPIO.cleanup()
+print('here is what happened:')
+print(events)
 print('goodbye.')
