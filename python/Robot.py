@@ -16,57 +16,61 @@ p1 = GPIO.PWM(12, 50)
 GPIO.setmode(GPIO.BCM)     # set up BCM GPIO numbering  
 GPIO.setup(14, GPIO.IN)    # set GPIO25 as input (button)  
 
+p_amt = 50
+p1_amt = 75
+
+
 
 def forward():
-	p.start(50)
-	p1.start(75)
+	p.start(p_amt)
+	p1.start(p1_amt)
 	GPIO.output(15, 1)
 	GPIO.output(16, 0)
 	GPIO.output(23, 0)
 	GPIO.output(24, 1)
 
 def reverse():
-    p1.start(75)
-    p.start(50)
+    p1.start(p1_amt)
+    p.start(p_amt)
     GPIO.output(15, 0)
     GPIO.output(16, 1)
     GPIO.output(23, 1)
     GPIO.output(24, 0)
 
 def right_arch():
-    p.start(50)
+    p.start(p_amt)
     GPIO.output(15, 0)
     GPIO.output(16, 0)
     GPIO.output(23, 0)
     GPIO.output(24, 1)
     
 def left_arch():
-    p1.start(75)
-    p.start(50)
+    p1.start(p1_amt)
+    p.start(p_amt)
     GPIO.output(15, 1)
     GPIO.output(16, 0)
     GPIO.output(23, 0)
     GPIO.output(24, 0)
 
 def left_pivot():
-    p1.start(75)
-    p.start(50)
+    p1.start(p1_amt)
+    p.start(p_amt)
     GPIO.output(15, 1)
     GPIO.output(16, 0)
     GPIO.output(23, 1)
     GPIO.output(24, 0)
 
 def right_pivot():
-    p1.start(75)
-    p.start(50)
+    p1.start(p1_amt)
+    p.start(p_amt)
     GPIO.output(15, 0)
     GPIO.output(16, 1)
     GPIO.output(23, 0)
     GPIO.output(24, 1)
 
 def stop_moving():
-    p1.start(75)
-    p.start(50)
+    p1.start(p1_amt)
+    p.start(p_amt)
     GPIO.output(15, 0)
     GPIO.output(16, 0)
     GPIO.output(23, 0)
@@ -84,7 +88,6 @@ def test_sequence():
 def edge_detected(channel):
     if GPIO.input(channel): # if port 4 == 1  
         print ("Rising edge detected on 14")
-        forward()
         right_pivot()
     else:                  # if port 25 != 1  
         print ("Falling edge detected on 14")
