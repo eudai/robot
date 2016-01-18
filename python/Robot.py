@@ -13,6 +13,9 @@ p1 = GPIO.PWM(12, 50)
 #dr = input ("What direction?:")
 #tm = input ("How long?:")
 
+GPIO.setmode(GPIO.BCM)     # set up BCM GPIO numbering  
+GPIO.setup(14, GPIO.IN)    # set GPIO25 as input (button)  
+
 
 def forward():
 	p.start(50)
@@ -21,7 +24,6 @@ def forward():
 	GPIO.output(16, 0)
 	GPIO.output(23, 0)
 	GPIO.output(24, 1)
-	time.sleep(3)
 
 def reverse():
     p1.start(75)
@@ -67,12 +69,26 @@ def right_pivot():
     GPIO.output(24, 1)
     time.sleep(3)
     
-forward()
-reverse()
-right_arch()
-left_arch()
-left_pivot()
-right_pivot()
-print ("Hi chris")
+def test_sequence():
+    seq = [forward,reverse,left_arch,right_arch,left_pivot,right_pivot]
+    for i in seq
+        seq[i]()
+        time.sleep(3)
+    print ("test complete.")
+
+def edge_detected(channel):  
+    print(channel)
+    if GPIO.input(14):     # if port 4 == 1  
+        print ("Rising edge detected on 14")
+        stop_moving() 
+    else:                  # if port 25 != 1  
+        print ("Falling edge detected on 14")
+
+def start_moving():
+
+  
+# when a changing edge is detected on port 4, regardless of whatever   
+# else is happening in the program, the function my_callback will be run  
+GPIO.add_event_detect(14, GPIO.BOTH, callback=edge_detected)  
 
 GPIO.cleanup()
