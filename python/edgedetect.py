@@ -25,5 +25,5 @@ try:
     print ("Time's up. Finished!")  
   
 finally:                   # this block will run no matter how the try block exits  
-    GPIO.cleanup()   
+    GPIO.cleanup()
 
