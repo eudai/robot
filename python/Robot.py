@@ -93,8 +93,10 @@ def edge_detected(channel):
         forward()
     else:                  # if port 25 != 1  
         # print ("Falling edge detected on 14")
-        right_pivot()
-
+        reverse()
+	time.sleep(.4)
+	right_pivot()
+	time.sleep(.5)
   
 # when a changing edge is detected on port 4, regardless of whatever   
 # else is happening in the program, the function my_callback will be run  
