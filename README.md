@@ -32,3 +32,5 @@ https://nodejs.org/en/
 http://expressjs.com/
 
 http://cylonjs.com/
+
+https://www.mediawiki.org/wiki/API:Main_page
