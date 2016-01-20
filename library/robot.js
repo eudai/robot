@@ -1,3 +1,4 @@
+var os = require('os')
 var commands = require('./commands')
 
 var Robot = function(){
@@ -25,8 +26,27 @@ var Robot = function(){
             })
         }
 	}
+    
+    var name = function(){
+        return os.hostname().split('.')[0]
+    }()
+    
+    var address = function(){
+        var adapters = os.networkInterfaces()
+        for ( var key in adapters ){
+            var ifaces = adapters[key]
+            for ( var i in ifaces ){
+                var iface = ifaces[i]
+                if ( iface.family == "IPv4" && iface.internal == false )
+                return iface.address
+            }
+        }
+    }()
 
-	this.execute = execute
+    this.name = name
+	this.address = address
+    this.execute = execute
+    
 
 }
 

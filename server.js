@@ -17,8 +17,5 @@ app.get('/:command',function(req,res){
 app.use(express.static('public'));
 
 app.listen(3000,'0.0.0.0',function() {
-    var name = os.hostname().split('.')[0]
-    var interfaces = os.networkInterfaces()
-    var address = interfaces.en0[1].address
-	console.log('%s is listening at %s:3000',name,address)
+	console.log('%s is listening at %s:3000',robot.name,robot.address)
 })
