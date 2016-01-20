@@ -22,3 +22,13 @@ Dev dependencies (in this case) will be used to install dependencies specific to
 
 `node server`
 
+
+## References
+
+https://www.raspberrypi.org/documentation/remote-access/ssh/unix.md
+
+https://nodejs.org/en/
+
+http://expressjs.com/
+
+http://cylonjs.com/

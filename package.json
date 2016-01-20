@@ -1,7 +1,7 @@
 {
   "name": "robot",
   "version": "1.0.0",
-  "description": "",
+  "description": "A robot built with Raspberry Pi.",
   "main": "index.js",
   "dependencies": {
     "express": "^4.13.3"
