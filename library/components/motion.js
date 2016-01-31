@@ -15,9 +15,15 @@ Cylon.robot({
 	},
 
 	work: function(my){
-		my.rightForwardMotor.speed(100)
+		my.rightForwardMotor.turnOn(function(){
+			my.leftForwardMotor.turnOn(function(){
+				my.rightForwardMotor.speed(100)
+				my.leftForwardMotor.speed(100)		
+			})
+		})
+		
 		// my.rightBackwardMotor.stop()
-		my.leftForwardMotor.speed(100)
+		// my.leftForwardMotor.speed(100)
 		// my.leftBackwardMotor.stop()
 
 		after((5).seconds(),function(){
