@@ -5,7 +5,7 @@ Cylon.robot({
 			
 	connections: {
 		raspi: { adapter: 'raspi' }
-	}
+	},
 
 	devices: {
 		motors: {
@@ -19,7 +19,7 @@ Cylon.robot({
 			}
 		}
 		
-	}
+	},
 
 	work: function(my){
 		my.motors.right.forward.speed(100)
