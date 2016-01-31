@@ -6,12 +6,12 @@ Cylon.robot({
   },
 
   devices: {
-    motorLR: { driver: 'motorL', pin: 23 }
-    motorLF: {driver: 'motorL2', pin: 24}
-    motorRF: {driver: 'motorR', pin: 15}
-    motorRR: {driver: 'motorR2', pin: 16}
-    L_Speed: {driver: 'L_Speed', pin: 18}
-    R_Speed: {driver: 'R_Speed', pin: 12}
+    motorL: {driver: 'motor', pin: 23 }
+    motorLR: {driver: 'motor', pin: 24}
+    motorR: {driver: 'motor', pin: 15}
+    motorRR: {driver: 'motor', pin: 16}
+    L_Speed: {driver: 'motor', pin: 18}
+    R_Speed: {driver: 'motor', pin: 12}
 
   },
 
