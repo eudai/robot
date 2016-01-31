@@ -4,21 +4,14 @@ var Cylon = require('cylon')
 Cylon.robot({
 			
 	connections: {
-		raspi: { adapter: 'raspi' }
+		raspi: { adaptor: 'raspi' }
 	},
 
 	devices: {
-		motors: {
-			right: {
-				foward: { driver: 'motor', pin: 16 },
-				backward: { driver: 'motor', pin: 15 }
-			},
-			left: {
-				forward: { driver: 'motor', pin: 23 },
-				backward: { driver: 'motor', pin: 24}
-			}
-		}
-		
+		rightForwardMotor: { driver: 'motor', pin: 16 },
+		rightBackwardMotor: { driver: 'motor', pin: 15 },
+		leftForwardMotor: { driver: 'motor', pin: 23 },
+		leftBackwardMotor: { driver: 'motor', pin: 24}		
 	},
 
 	work: function(my){
@@ -34,5 +27,5 @@ Cylon.robot({
 	}
 
 
-})
+}).start()
 
