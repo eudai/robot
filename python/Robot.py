@@ -17,13 +17,13 @@ p1 = GPIO.PWM(12, 80)
 def record():
 	
 	camera = picamera.PiCamera()
-	camera.start_recording('/home/pi/Videos/test.mp4')
+	camera.start_recording('/home/pi/Videos/test')
 	time.sleep(30)
 	camera.stop_recording()
 #dr = input ("What direction?:")
 #tm = input ("How long?:")
 
-GPIO.setmode(GPIO.BCM)     # set up BCM GPIO numbering  
+
 GPIO.setup(2, GPIO.IN)    # set GPIO25 as input (button)  
 
 p_amt = 100      # left
