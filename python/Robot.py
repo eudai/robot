@@ -22,11 +22,8 @@ p1.start(90)     # right
 print("Motion initiallized")
 
 
-
-
 motion = Motion()
 
-#camera = picamera.PiCamera()
 def record():
 	camera = picamera.PiCamera()
 	camera.start_recording('/home/pi/Videos/test.h264')
@@ -34,7 +31,6 @@ def record():
 
 
 def edge_detected(channel):
- #   record()
     pin_active = GPIO.input(channel)
     events.append(pin_active)
     if pin_active: # if port 2 == 1  
@@ -56,7 +52,6 @@ print('hello.')
 time.sleep(30)
 
 
-#camera.stop_recording()
 print('here is what happened:')
 print(events)
 print('goodbye.')
