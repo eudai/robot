@@ -2,7 +2,7 @@ import RPi GPIO as GPIO
 import time
 
 
-init(): #this sets up the pins and camera for movement and video
+init(): #this sets up the pins for movement
 	GPIO.setmode(GPIO.BCM)
 	GPIO.setup(14, GPIO.OUT) #Right motors backward
 	GPIO.setup(15, GPIO.OUT) #Right motors forward

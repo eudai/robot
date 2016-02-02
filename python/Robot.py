@@ -8,7 +8,7 @@ init()
 
 def record():
 	camera = picamera.PiCamera()
-	camera.start_recording('/home/pi/Videos/test')
+	camera.start_recording('/home/pi/Videos/test.h264')
 	
 
 
