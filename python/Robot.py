@@ -4,6 +4,7 @@ import picamera
 import RobotMethods
 import RMove *
 
+init()
 
 def record():
 	camera = picamera.PiCamera()
@@ -21,9 +22,9 @@ def edge_detected(channel):
     else:                  # if port 2 != 1  
         # print ("Falling edge detected on 2")
         reverse()
-        time.sleep(.4)
+        time.sleep(.3)
         right_pivot()
-        time.sleep(1)
+        time.sleep(.5)
   
  #when a changing edge is detected on port 2, regardless of whatever   
  #else is happening in the program, the function my_callback will be run  
