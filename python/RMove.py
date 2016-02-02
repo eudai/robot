@@ -4,10 +4,10 @@ import time
 
 init(): #this sets up the pins and camera for movement and video
 	GPIO.setmode(GPIO.BCM)
-	GPIO.setup(14, GPIO.OUT)
-	GPIO.setup(15, GPIO.OUT)
-	GPIO.setup(23, GPIO.OUT)
-	GPIO.setup(24, GPIO.OUT)
+	GPIO.setup(14, GPIO.OUT) #Right motors backward
+	GPIO.setup(15, GPIO.OUT) #Right motors forward
+	GPIO.setup(23, GPIO.OUT) #Left motors backward
+	GPIO.setup(24, GPIO.OUT) #Left motors forward
 	GPIO.setup(25, GPIO.OUT)
 	GPIO.setup(18, GPIO.OUT)
 	GPIO.setup(12, GPIO.OUT)
