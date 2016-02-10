@@ -15,7 +15,7 @@ Cylon.robot({
 	},
 
 	work: function(my){
-		my.rightForwardMotor.turnOn(function(error){
+		this.rightForwardMotor.turnOn(function(error){
 			if (error) console.log(error)
 			my.leftForwardMotor.turnOn(function(error){
 				if (error) console.log(error)
